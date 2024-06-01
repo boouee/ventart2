@@ -1,0 +1,388 @@
+.popular {
+  padding-top: 16rem;
+  padding-bottom: 2rem;
+  min-height: 100vh;
+  position: relative;
+
+
+
+  @include tablet {
+    padding-top: 12rem;
+  }
+
+  &__categories {
+    margin-bottom: 6rem;
+
+    @include tablet {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2.5rem;
+  }
+
+  &__control {
+    display: flex;
+    align-items: center;
+
+    @include tablet {
+      // display: none;
+    }
+  }
+
+  &__control-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 100%;
+    border: 1px solid #397a9e;
+
+    svg {
+      width: 1.8rem;
+      height: 2.2rem;
+    }
+  }
+
+  &__title {
+    text-align: left;
+    margin: 0;
+
+    font-size: 2.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #397a9e;
+
+    @include tablet {
+      font-size: 2rem;
+    }
+  }
+
+  &__link {
+    display: flex;
+  }
+
+
+  &__more {
+    margin: 0 auto;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    font-weight: 700;
+    font-size: 2.8rem;
+    text-align: center;
+    color: #437d9d;
+
+    display: none;
+
+    @include tablet {
+      display: flex;
+    }
+  }
+
+  &__items {
+    margin-bottom: 2rem;
+
+    // @include tablet {
+    //   display: block;
+    // }
+  }
+
+  &__slider {
+
+
+    .swiper-slide {
+      box-sizing: border-box;
+      height: auto;
+
+      // @include tablet {
+      //   display: none;
+
+      //   &.is-visible {
+      //     display: block;
+      //   }
+      // }
+    }
+  }
+
+  &__container {
+    @include tablet {
+      margin-bottom: 8rem;
+    }
+  }
+}
+
+
+.popular-item {
+  background-color: #e9f4f5;
+  padding: 2rem 3.3rem;
+  padding-top: 6rem;
+  position: relative;
+  transition: background-color .3s ease-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+
+  @include tablet {
+    padding: 1rem;
+    padding-top: 2rem;
+    min-height: 18rem;
+  }
+
+
+
+  &--light-blue {
+    background-color: #e9f4f5;
+  }
+
+  &--light {
+    background-color: #ecfdff;
+  }
+
+  &--white {
+    background-color: #fafefe;
+  }
+
+  @include hover {
+    background-color: #74d0ed;
+
+    .popular-item {
+      &__image {
+        filter: saturate(1);
+      }
+
+      &__theme {
+        border-color: #fff;
+        color: #fff;
+      }
+
+      &__title,
+      &__price {
+        color: #fff;
+      }
+
+      &__btn {
+        svg {
+          fill: #fff;
+        }
+      }
+    }
+  }
+
+  &__theme {
+    border: 1px solid var(--text-color);
+    border-radius: .5rem;
+    padding: 1rem;
+    position: absolute;
+    z-index: 1;
+    left: 2rem;
+    top: 2rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: var(--text-color);
+
+    transition: color .3s ease-out, border-color .3s ease-out;
+
+    @include tablet {
+      font-size: 0.8rem;
+      padding: .5rem;
+      top: 0rem;
+      left: 0rem;
+    }
+  }
+
+  &__image {
+    height: 16.8rem;
+    max-width: 18.8rem;
+
+    margin: 0 auto;
+    margin-bottom: 3rem;
+
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    filter: saturate(.5);
+
+    @include tablet {
+      height: 8rem;
+      margin-bottom: 1.5rem;
+      max-width: 8rem;
+    }
+
+    img {
+      display: block;
+      height: 100%;
+      width: auto;
+      object-fit: contain;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      border-radius: 100%;
+      z-index: -1;
+      width: 31.4rem;
+      height: 25rem;
+      background: radial-gradient(rgba(255, 255, 255, 0.1), transparent);
+      filter: blur(5px);
+
+      @include tablet {
+        width: 10rem;
+        height: 10rem;
+      }
+    }
+  }
+
+  &__title {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 2.4rem;
+    text-align: center;
+    font-weight: 400;
+    font-size: 2.4rem;
+    color: var(--text-color);
+
+    transition: color .3s ease-out;
+
+    @include tablet {
+      font-size: 1.1rem;
+      margin-bottom: 1.2rem;
+      max-width: 14rem;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__btn {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.2rem;
+    height: 3.2rem;
+
+    @include tablet {
+      width: 2.2rem;
+      height: 2.2rem;
+      padding: 0;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+      fill: var(--text-color);
+
+      transition: fill .3s ease-out;
+    }
+  }
+
+  &__price {
+    flex-shrink: 0;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 2.4rem;
+    color: var(--text-color);
+    transition: color .3s ease-out;
+
+    @include tablet {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+
+
+.cat {
+  &__slider {
+    padding: 0 calc((100% - var(--container-width)) / 2);
+
+    .swiper-slide {
+      box-sizing: border-box;
+      width: auto;
+      height: auto;
+      transition: background-color .3s ease-out;
+
+      @include tablet {
+        width: 100%;
+
+      }
+
+      &:nth-child(odd) {
+        background-color: #e0f4f5;
+      }
+
+      &:nth-child(even) {
+        background-color: #fff;
+      }
+
+      @include hover {
+        background-color: #74d0ed;
+
+        .cat-item__title {
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  &__item {
+    width: 23rem;
+    height: 100%;
+
+    @include tablet {
+      width: auto;
+    }
+  }
+}
+
+.cat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 1rem;
+  min-height: 16rem;
+
+  &__image {
+    height: 8rem;
+    margin-bottom: 2rem;
+
+    img {
+      height: 100%;
+      width: auto;
+      object-fit: contain;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    text-align: center;
+    color: #4e4d4d;
+
+    @include tablet {
+      font-size: 1rem;
+    }
+
+    transition: color .3s ease-out;
+  }
+}

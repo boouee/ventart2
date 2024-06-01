@@ -1,0 +1,47 @@
+.results {
+  border-bottom: 1px solid #fff;
+  border-top: 1px solid #fff;
+  padding: 1rem 0;
+  background-color: #74d0ed;
+
+  @include tablet {
+    margin-bottom: 5rem;
+  }
+
+  &__wrapper {
+    min-width: 100%;
+    display: flex;
+    gap: 5rem;
+  }
+
+  &__items {
+    flex-shrink: 0;
+    min-width: 100%;
+    display: flex;
+    gap: 5rem;
+    animation: scroll 80s linear infinite;
+  }
+
+  &__item {
+    flex-shrink: 0;
+    font-weight: 600;
+    font-size: 12.8rem;
+    text-transform: uppercase;
+    color: #fff;
+    white-space: nowrap;
+
+    @include tablet {
+      font-size: 6.4rem;
+    }
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
